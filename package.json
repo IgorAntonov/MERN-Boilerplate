@@ -1,0 +1,153 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate project for building apps with MERN stack",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "webpack-dev-server --open --config ./client/config/webpack.config.dev.js",
+    "dev": "concurrently -k \"npm run server\" \"npm run client\" ",
+    "build": "webpack --config ./client/config/webpack.config.prod.js --progress",
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorAntonov/MERN-Boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Igor Antonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorAntonov/MERN-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/IgorAntonov/MERN-Boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "mini-css-extract-plugin": "^0.4.0",
+    "nodemon": "^1.17.3",
+    "postcss-loader": "^2.1.4",
+    "react-test-renderer": "^16.3.2",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^2.5.5",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.17",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.1.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "styled-components": "^3.2.6"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR"
+  ],
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/client/config/configureEnzymeAdapter.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel",
+      "transform-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb"
+    ],
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "to",
+            "hrefLeft",
+            "hrefRight"
+          ],
+          "aspects": [
+            "noHref",
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ],
+      "linebreak-style": 0,
+      "no-console": "off",
+      "comma-dangle": 0,
+      "arrow-parens": 0
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourseType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true,
+      "node": true
+    }
+  }
+}

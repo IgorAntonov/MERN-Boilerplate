@@ -9,7 +9,11 @@
     "client": "webpack-dev-server --open --config ./client/config/webpack.config.dev.js",
     "dev": "concurrently -k \"npm run server\" \"npm run client\" ",
     "build": "webpack --config ./client/config/webpack.config.prod.js --progress",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
+  },
+  "engines": {
+    "node": "8.10.0"
   },
   "repository": {
     "type": "git",
